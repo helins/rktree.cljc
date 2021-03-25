@@ -1,4 +1,4 @@
-(ns dvlopt.rktree.transit-test
+(ns dvlopt.rktree.test.transit
 
   {:author "Adam Helinski"}
 
@@ -7,8 +7,6 @@
             [dvlopt.rktree.transit :as rktree.transit])
   #?(:clj (:import (java.io ByteArrayInputStream
                             ByteArrayOutputStream))))
-
-
 
 
 ;;;;;;;;;; Ser/de
@@ -33,7 +31,6 @@
 
 
 
-
 (defn deserialize
 
   "Deserializes using Transit."
@@ -45,7 +42,6 @@
                     :json
                     {:handlers rktree.transit/read-handler})
     #?(:cljs x)))
-
 
 
 
@@ -64,8 +60,6 @@
       sorted-2
       (throw (ex-info "Sorted map is not sorted at deserialization"
                       {::x sorted-2})))))
-
-
 
 
 ;;;;;;;;;;

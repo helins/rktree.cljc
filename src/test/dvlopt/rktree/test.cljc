@@ -1,18 +1,15 @@
-(ns dvlopt.rktree-test
+(ns dvlopt.rktree.test
 
   {:author "Adam Helinski"}
 
-  (:require [clojure.core               :as clj]
-            [clojure.test               :as t]
+  (:require [clojure.test               :as t]
             [dvlopt.rktree              :as rktree]
-            [dvlopt.rktree.transit-test :as rktree.transit-test])
+            [dvlopt.rktree.test.transit :as rktree.test.transit])
   (:refer-clojure :exclude [assoc
                             dissoc
                             get
                             pop
                             update]))
-
-
 
 
 ;;;;;;;;;; Miscellaneous
@@ -22,9 +19,7 @@
 
   "For testing serialization as a bonus"
 
-  rktree.transit-test/serde-twice)
-
-
+  rktree.test.transit/serde-twice)
 
 
 ;;;;;;;;;; Operations with ranks
@@ -55,8 +50,6 @@
     []
     [5 5]
     [5 5]))
-
-
 
 
 ;;;;;;;;;; Manipulating trees
@@ -105,7 +98,6 @@
 
 
 
-
 (t/deftest dissoc
 
   ;; Tests `update` as well.
@@ -148,8 +140,6 @@
 
 
 
-
-
 (t/deftest get
 
   (t/is (= 42
@@ -184,7 +174,6 @@
 
 
 
-
 (t/deftest pop
 
   ;; Tests `pop*` as well.
@@ -208,7 +197,6 @@
             nil]
            (rktree/pop (serde (sorted-map))))
         "Nothing to pop"))
-
 
 
 

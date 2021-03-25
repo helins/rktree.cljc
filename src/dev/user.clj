@@ -2,24 +2,14 @@
 
   "For daydreaming in the REPL." 
 
-  (:require [clojure.repl]
-            [clojure.test               :as t]
-            [cognitect.transit          :as transit]
-            [criterium.core             :as C]
+  (:require [cognitect.transit          :as transit]
             [dvlopt.rktree              :as rktree]
+            [dvlopt.rktree.dev          :as rktree.dev]
             [dvlopt.rktree.transit      :as rktree.transit]
-            [dvlopt.rktree-test         :as rktree-test]
-            [dvlopt.rktree.transit-test :as rktree.transit-test]
             [dvlopt.void                :as void]))
 
 
-
-
 ;;;;;;;;;;
-
-
-;(require '[nrepl.server])  (defonce server (nrepl.server/start-server :port 4000))
-
 
 
 (comment

@@ -6,7 +6,7 @@
   <version>0.0.0-beta2</version>
   <name>rktree</name>
   <description>Trees where leaves are located both in time and space</description>
-  <url>https://github.com/dvlopt/rktree.cljc</url>
+  <url>https://github.com/helins/rktree.cljc</url>
   <licenses>
     <license>
       <name>Eclipse Public License</name>
@@ -16,12 +16,14 @@
   <developers>
     <developer>
       <name>Adam Helinski</name>
+      <email>adam@helins.io</email>
+      <url>http://www.helins.io</url>
     </developer>
   </developers>
   <scm>
-    <url>https://github.com/dvlopt/rktree.cljc</url>
-    <connection>scm:git:git://github.com/dvlopt/rktree.cljc.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/dvlopt/rktree.cljc.git</developerConnection>
+    <url>https://github.com/helins/rktree.cljc</url>
+    <connection>scm:git:git://github.com/helins/rktree.cljc.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/helins/rktree.cljc.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
   <dependencies>
@@ -31,22 +33,18 @@
       <version>1.10.1</version>
     </dependency>
     <dependency>
-        <groupId>dvlopt</groupId>
-        <artifactId>void</artifactId>
-        <version>1.0.1</version>
+      <groupId>dvlopt</groupId>
+      <artifactId>void</artifactId>
+      <version>1.0.1</version>
     </dependency>
   </dependencies>
   <build>
-    <sourceDirectory>src</sourceDirectory>
+    <sourceDirectory>src/main</sourceDirectory>
   </build>
   <repositories>
     <repository>
       <id>clojars</id>
       <url>https://repo.clojars.org/</url>
-    </repository>
-    <repository>
-      <id>sonatype</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
     </repository>
   </repositories>
   <distributionManagement>

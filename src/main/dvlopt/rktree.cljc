@@ -22,14 +22,7 @@
                             update]))
 
 
-
-
-;;;;;;;;;; Gathering all declarations
-
-
 (declare update)
-
-
 
 
 ;;;;;;;;;; Creating new trees
@@ -44,8 +37,6 @@
   []
 
   (sorted-map))
-
-
 
 
 ;;;;;;;;;; Operations with ranks
@@ -84,8 +75,6 @@
           rear)))
 
 
-
-
 ;;;;;;;;;; Manipulating trees
 
 
@@ -100,7 +89,6 @@
     ranks
     (throw (ex-info "Ranks cannot be empty"
                     {::ranks ranks}))))
-
 
 
 
@@ -125,7 +113,6 @@
 
 
 
-
 (defn- -assoc-leaf
 
   ;; Creates required sorted maps following ranks then associates the leaf.
@@ -138,7 +125,6 @@
                                v)
                   (-assoc-in path
                              v))))
-
 
 
 
@@ -208,7 +194,6 @@
 
 
 
-
 (defn assoc
 
   "Associates `v` at `path` which is then prioritized using `ranks`.
@@ -231,7 +216,6 @@
            (-enforce-ranks ranks)
            path
            v)))
-
 
 
 
@@ -260,7 +244,6 @@
 
 
 
-
 (defn- -get
 
   ;; Cf. [[get]]
@@ -284,7 +267,6 @@
         (get-in node
                 path
                 not-found)))))
-
 
 
 
@@ -318,7 +300,6 @@
 
 
 
-
 (defn- -pop
 
   ;; Cf. [[pop]]
@@ -349,7 +330,6 @@
 
 
 
-
 (defn pop
 
   "Respecting the ordering of ranks, returns a vector such as:
@@ -366,7 +346,6 @@
 
   (-pop tree
         []))
-
 
 
 
@@ -390,7 +369,6 @@
        ranks
        path
        node)))
-
 
 
 
@@ -438,7 +416,6 @@
 
 
 
-
 (defn- -update
 
   ;; Cf. [[update]]
@@ -478,7 +455,6 @@
                                     v)
                        (-assoc-in path
                                   v)))))))
-
 
 
 
