@@ -9,6 +9,12 @@ Project](https://img.shields.io/clojars/v/dvlopt/rktree.svg)](https://clojars.or
 
 Compatible with Clojurescript.
 
+Feel free to clone this repo, the examples below located are in the
+[dvlopt.rktree.example](../main/src/example/dvlopt/rktree/example.cljc)
+namespace. See the "Development" section at the end of this document.
+
+
+## Usage
 
 A `ranked tree` is a peculiar but interesting data structure. It is a form of
 nested maps where leaves are located both in time and space. It comes in handy
@@ -17,14 +23,6 @@ for problems that needs some form of prioritization.
 More specifically, it is a complex of nested maps where former levels are sorted
 and latter levels are unsorted.
 
-Feel free to clone this repo, the examples below are in
-[/dev/user.clj](dev/user.clj):
-
-```sh
-$ clj -A:dev:test
-
-# And your favorite REPL
-```
 
 Following this definition, the following qualifies as a `ranked tree`:
 
@@ -98,6 +96,7 @@ We have discovered a few recognizable functions such as `assoc` and `get`. The
 [API](https://cljdoc.org/d/dvlopt/rktree) provide other ones (`dissoc`,
 `update`, and friends), all acting on this idea of having `ranks` and a `path`.
 
+
 ## Serialization
 
 Some serializers make a distinction between sorted maps and unsorted ones. For
@@ -122,49 +121,45 @@ rktree.transit/read-handler
 rktree.transit/write-handler
 ```
 
-## Run tests
 
-### Using Kaocha
+## Running tests
 
-Run all tests (JVM and JS based ones):
-
-```bash
-$ ./bin/kaocha
-```
-
-For Clojure only:
+On the JVM, using [Kaocha](https://github.com/lambdaisland/kaocha):
 
 ```bash
-$ ./bin/kaocha jvm
+$ ./bin/test/jvm/run
+$ ./bin/test/jvm/watch
 ```
-
-For Clojurescript on NodeJS, `ws` must be installed:
-```bash
-$ npm i ws
-```
-Then:
-```
-$ ./bin/kaocha node
-```
-
-For Clojurescript in the browser (which might need to be already running):
-```bash
-$ ./bin/kaocha browser
-```
-
-### Using Chui for browser testing
-
-For more convenient and thorough browser testing:
+On NodeJS, using [Kaocha-CLJS](https://github.com/lambdaisland/kaocha-cljs):
 
 ```bash
-$ ./bin/chui $COMMAND $ARGS
+$ ./bin/test/node/run
+$ ./bin/test/node/watch
 ```
 
-Where `$COMMAND` is `compile`, `watch`, or `release` (for testing a build with
-advanced optimizations). When using `release`, providing `--debug` is extemely
-useful when something goes wrong (eg. names are not munged in stacktraces).
+In the browser, using [Chui](https://github.com/lambdaisland/chui):
+```
+$ ./bin/test/browser/compile
+# Then open ./resources/chui/index.html
 
-When ready, open `./chui/index.html` in your favorite browser.
+# For testing an advanced build
+$ ./bin/test/browser/advanced
+```
+
+
+## Development
+
+Starting in Clojure JVM mode, mentioning an additional deps alias (here, a local
+setup of NREPL):
+```bash
+$ ./bin/dev/clojure :nrepl
+```
+
+Starting in CLJS mode using Shadow-CLJS:
+```bash
+$ ./bin/dev/cljs
+# Then open ./resources/public/index.html
+```
 
 
 ## License

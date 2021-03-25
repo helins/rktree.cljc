@@ -9,6 +9,7 @@
 
   (:require [cognitect.transit          :as transit]
             [dvlopt.rktree              :as rktree]
+            [dvlopt.rktree.example]
             [dvlopt.rktree.transit      :as rktree.transit]
             [dvlopt.void                :as void]))
 

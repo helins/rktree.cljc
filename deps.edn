@@ -10,7 +10,8 @@
    :extra-deps {slipset/deps-deploy {:mvn/version "0.1.5"}}}
 
   :dev
-  {:extra-paths ["src/dev"]}
+  {:extra-paths ["src/dev"
+                 "src/example"]}
 
   :jar
   {:exec-args    {:jar      "release.jar"
