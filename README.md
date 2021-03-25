@@ -5,6 +5,8 @@ Project](https://img.shields.io/clojars/v/dvlopt/rktree.svg)](https://clojars.or
 
 [![cljdoc badge](https://cljdoc.org/badge/dvlopt/rktree)](https://cljdoc.org/d/dvlopt/rktree)
 
+![CircleCI](https://circleci.com/gh/helins/rktree.cljc.svg?style=shield)
+
 Compatible with Clojurescript.
 
 
